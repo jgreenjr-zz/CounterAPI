@@ -1,3 +1,4 @@
 phases:
   post_build:
-    - echo Build completed
+    commands:
+      - echo Build completed
