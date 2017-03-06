@@ -6,4 +6,4 @@ phases:
       - echo Build completed
 artifacts:
   files:
-    - *.yml
+    - .yml
