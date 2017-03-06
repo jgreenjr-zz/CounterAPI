@@ -1,3 +1,4 @@
-Type: "AWS::ElasticBeanstalk::ConfigurationTemplate"
-Properties:
-  ApplicationName: "CounterAPI"
+myConfigTemplate:
+  Type: "AWS::ElasticBeanstalk::ConfigurationTemplate"
+  Properties:
+    ApplicationName: "CounterAPI"
