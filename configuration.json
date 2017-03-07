@@ -1,6 +1,1 @@
-"myConfigTemplate": {
-  "Type": "AWS::ElasticBeanstalk::ConfigurationTemplate",
-  "Properties": {
-    "ApplicationName": {"Ref" : "myApp"}
-  }
-}
+{"AWSTemplateFormatVersion" : "2010-09-09"}
