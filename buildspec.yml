@@ -6,5 +6,5 @@ phases:
       - echo Build completed
 artifacts:
   files:
-    - template.yml
-    - configuration.yml
+    - template.json
+    - configuration.json
