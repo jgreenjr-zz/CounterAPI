@@ -8,7 +8,7 @@
       "Properties": {
         "Handler": "index.handler",
         "Runtime": "Python2.7",
-        "CodeUri": "./",
+        "CodeUri": { "Fn::GetArtifactAtt" : ["MyAppBuild", "URL"]},
         "Events": {
           "CounterAPI": {
             "Type": "Api",
