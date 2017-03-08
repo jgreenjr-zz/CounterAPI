@@ -4,11 +4,10 @@
   "Type": "AWS::Lambda::Function",
   "Properties": {
     "Handler": "index.handler",
-    "Role": { "Fn::GetAtt" : ["LambdaExecutionRole", "Arn"] },
     "Code":
      {
-  "S3Bucket" : { "Fn::GetArtifactAtt" : ["LambdaFunctionSource", "BucketName"]},
-  "S3Key" : { "Fn::GetArtifactAtt" : ["LambdaFunctionSource", "ObjectKey"]}
+  "S3Bucket" : { "Fn::GetArtifactAtt" : ["MyAppBuild", "BucketName"]},
+  "S3Key" : { "Fn::GetArtifactAtt" : ["MyAppBuild", "ObjectKey"]}
 },
     "Runtime": "nodejs4.3",
     "Timeout": "25"
