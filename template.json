@@ -1,9 +1,21 @@
 {
     "Resources":{
-        "api":{
-            "Type": "AWS::Serverless::Api",
-            "StageName": "Dev"
-        }
+      "CounterTable":
+        {
+ 
+    "Type": "AWS::Serverless::SimpleTable",
+    "Properties": {
+      "PrimaryKey": {
+        "Name": "id",
+        "Type": "String"
+      },
+      "ProvisionedThroughput": {
+        "ReadCapacityUnits": 5,
+        "WriteCapacityUnits": 5
+      }
+    }
+  }
+
     },
     "Outputs" : {
     "fromArtifacts":{
