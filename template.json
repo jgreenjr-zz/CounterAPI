@@ -26,31 +26,5 @@
             }
          }
       }
-   },
-   "Outputs":{  
-      "bucket":{  
-         "Value":{  
-            "Fn::GetArtifactAtt":[  
-               "MyAppBuild",
-               "BucketName"
-            ]
-         }
-      },
-      "ObjectKey":{  
-         "Value":{  
-            "Fn::GetArtifactAtt":[  
-               "MyAppBuild",
-               "ObjectKey"
-            ]
-         }
-      },
-      "URL":{  
-         "Value":{  
-            "Fn::GetArtifactAtt":[  
-               "MyAppBuild",
-               "URL"
-            ]
-         }
-      }
    }
 }
