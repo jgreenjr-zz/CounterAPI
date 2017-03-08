@@ -1,27 +1,43 @@
-{
-    "Resources":{
-      "CounterTable":
-        {
- 
-    "Type": "AWS::Serverless::SimpleTable",
-    "Properties": {
-      "PrimaryKey": {
-        "Name": "id",
-        "Type": "String"
-      },
-      "ProvisionedThroughput": {
-        "ReadCapacityUnits": 5,
-        "WriteCapacityUnits": 5
+{  
+   "Resources":{  
+      "CounterTable":{  
+         "Type":"AWS::Serverless::SimpleTable",
+         "Properties":{  
+            "PrimaryKey":{  
+               "Name":"id",
+               "Type":"String"
+            },
+            "ProvisionedThroughput":{  
+               "ReadCapacityUnits":5,
+               "WriteCapacityUnits":5
+            }
+         }
       }
-    }
-  }
-
-    },
-    "Outputs" : {
-    "fromArtifacts":{
-        "bucket":{ "Fn::GetArtifactAtt" : ["MyAppBuild", "BucketName"]},
-       "ObjectKey":{ "Fn::GetArtifactAtt" : ["MyAppBuild", "ObjectKey"]},
-       "URL":{ "Fn::GetArtifactAtt" : ["MyAppBuild", "URL"]}
-    }
-}
+   },
+   "Outputs":{  
+      "bucket":{  
+         "Value":{  
+            "Fn::GetArtifactAtt":[  
+               "MyAppBuild",
+               "BucketName"
+            ]
+         }
+      },
+      "ObjectKey":{  
+         "Value":{  
+            "Fn::GetArtifactAtt":[  
+               "MyAppBuild",
+               "ObjectKey"
+            ]
+         }
+      },
+      "URL":{  
+         "Value":{  
+            "Fn::GetArtifactAtt":[  
+               "MyAppBuild",
+               "URL"
+            ]
+         }
+      }
+   }
 }
