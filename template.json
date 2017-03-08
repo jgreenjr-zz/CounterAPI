@@ -1,33 +1,8 @@
-/*{
-  "AWSTemplateFormatVersion": "2010-09-09",
-  "Transform": "AWS::Serverless-2016-10-31",
-  "Description": "Outputs the time",
-  "Resources": {
-    "TimeFunction": {
-      "Type": "AWS::Serverless::Function",
-      "Properties": {
-        "Handler": "index.handler",
-        "Runtime": "Python2.7",
-        "CodeUri": { "Fn::GetArtifactAtt" : ["MyAppBuild", "URL"]},
-        "Events": {
-          "CounterAPI": {
-            "Type": "Api",
-            "Properties": {
-              "Path": "/Counters",
-              "Method": "GET"
-            }
-          }
-        }
-      }
-    }
-  }
-}
-*/
-
-"Outputs" : {
+{"Outputs" : {
     "fromArtifacts":{
         "bucket":{ "Fn::GetArtifactAtt" : ["MyAppBuild", "BucketName"]},
        "ObjectKey":{ "Fn::GetArtifactAtt" : ["MyAppBuild", "ObjectKey"]},
        "URL":{ "Fn::GetArtifactAtt" : ["MyAppBuild", "URL"]}
     }
+}
 }
