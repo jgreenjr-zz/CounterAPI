@@ -1,4 +1,11 @@
-{"Outputs" : {
+{
+    "Resources":{
+        "api":{
+            "Type": "AWS::Serverless::Api",
+            "StageName": "Dev"
+        }
+    }
+    "Outputs" : {
     "fromArtifacts":{
         "bucket":{ "Fn::GetArtifactAtt" : ["MyAppBuild", "BucketName"]},
        "ObjectKey":{ "Fn::GetArtifactAtt" : ["MyAppBuild", "ObjectKey"]},
