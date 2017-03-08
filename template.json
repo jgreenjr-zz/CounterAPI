@@ -4,7 +4,7 @@
             "Type": "AWS::Serverless::Api",
             "StageName": "Dev"
         }
-    }
+    },
     "Outputs" : {
     "fromArtifacts":{
         "bucket":{ "Fn::GetArtifactAtt" : ["MyAppBuild", "BucketName"]},
