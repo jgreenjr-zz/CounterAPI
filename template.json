@@ -1,5 +1,19 @@
 {  
    "Resources":{  
+     "AMIIDLookup": {
+  "Type": "AWS::Lambda::Function",
+  "Properties": {
+    "Handler": "index.handler",
+    "Role": { "Fn::GetAtt" : ["LambdaExecutionRole", "Arn"] },
+    "Code":
+     {
+  "S3Bucket" : { "Fn::GetArtifactAtt" : ["LambdaFunctionSource", "BucketName"]},
+  "S3Key" : { "Fn::GetArtifactAtt" : ["LambdaFunctionSource", "ObjectKey"]}
+},
+    "Runtime": "nodejs4.3",
+    "Timeout": "25"
+  }
+},
       "CounterTable":{  
          "Type":"AWS::Serverless::SimpleTable",
          "Properties":{  
