@@ -28,6 +28,6 @@
     "fromArtifacts":{
         "bucket":{ "Fn::GetArtifactAtt" : ["MyAppBuild", "BucketName"]},
        "ObjectKey":{ "Fn::GetArtifactAtt" : ["MyAppBuild", "ObjectKey"]},
-       "URL":{ "Fn::GetArtifactAtt" : ["MyAppBuild", "URL"]},
+       "URL":{ "Fn::GetArtifactAtt" : ["MyAppBuild", "URL"]}
     }
 }
