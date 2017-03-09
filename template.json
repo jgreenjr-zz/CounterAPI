@@ -2,7 +2,7 @@
    "Parameters":{
         "myBucket": { "Fn::GetArtifactAtt" : ["MyAppBuild", "BucketName"]},
          "MyS3Key": { "Fn::GetArtifactAtt" : ["MyAppBuild", "ObjectKey"]}
-   }
+   },
    "Resources":{  
      "AMIIDLookup": {
   "Type": "AWS::Lambda::Function",
