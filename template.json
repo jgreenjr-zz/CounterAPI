@@ -25,19 +25,6 @@
             "Runtime":"nodejs4.3",
             "Timeout":"25"
          }
-      },
-      "CounterTable":{
-         "Type":"AWS::Serverless::SimpleTable",
-         "Properties":{
-            "PrimaryKey":{
-               "Name":"id",
-               "Type":"String"
-            },
-            "ProvisionedThroughput":{
-               "ReadCapacityUnits":5,
-               "WriteCapacityUnits":5
-            }
-         }
       }
    }
 }
