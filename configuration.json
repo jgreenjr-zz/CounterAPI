@@ -1,3 +1,13 @@
 {
-  "Type" : "AWS::ElasticBeanstalk::ConfigurationTemplate"
+  "myBucket": 
+    {"Fn::GetArtifactAtt":[
+               "MyAppBuild",
+               "BucketName"
+            ]},
+  "MyS3Key":{
+    "Fn::GetArtifactAtt":[
+               "MyAppBuild",
+               "ObjectKey"
+            ]}
+  }
 }
