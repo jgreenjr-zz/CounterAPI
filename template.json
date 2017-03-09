@@ -2,21 +2,11 @@
    "Parameters":{
       "myBucket":{
          "Type":"String",
-         "Default":{
-            "Fn::GetArtifactAtt":[
-               "MyAppBuild",
-               "BucketName"
-            ]
-         }
+         "Default": ""
       },
       "MyS3Key":{
          "Type":"String",
-         "Default":{
-            "Fn::GetArtifactAtt":[
-               "MyAppBuild",
-               "ObjectKey"
-            ]
-         }
+         "Default": ""
       }
    },
    "Resources":{
