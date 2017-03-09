@@ -1,4 +1,8 @@
-{  
+{
+   "Parameters":{
+        "myBucket": { "Fn::GetArtifactAtt" : ["MyAppBuild", "BucketName"]},
+         "MyS3Key": { "Fn::GetArtifactAtt" : ["MyAppBuild", "ObjectKey"]}
+   }
    "Resources":{  
      "AMIIDLookup": {
   "Type": "AWS::Lambda::Function",
@@ -6,8 +10,8 @@
     "Handler": "index.handler",
     "Code":
      {
-  "S3Bucket" : { "Fn::GetArtifactAtt" : ["MyAppBuild", "BucketName"]},
-  "S3Key" : { "Fn::GetArtifactAtt" : ["MyAppBuild", "ObjectKey"]}
+  "S3Bucket" : {"Ref": "myBucket"} ,
+  "S3Key" : {"Ref": "MyS3Key"}
 },
     "Runtime": "nodejs4.3",
     "Timeout": "25"
