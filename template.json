@@ -127,6 +127,21 @@
       "Properties": {
         "Name": "CounterAPI"
       }
+    },
+    "Count": {
+      "Type": "AWS::ApiGateway::Resource",
+      "Properties": {
+        "RestApiId": {
+          "Ref": "CounterAPI"
+        },
+        "ParentId": {
+          "Fn::GetAtt": [
+            "CounterAPI",
+            "RootResourceId"
+          ]
+        },
+        "PathPart": "Count"
+      }
     }
   }
 }
