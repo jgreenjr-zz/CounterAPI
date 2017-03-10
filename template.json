@@ -46,7 +46,6 @@
                   "lambda.amazonaws.com"
                 ]
               },
-              
               "Action": [
                 "sts:AssumeRole"
               ]
@@ -121,6 +120,12 @@
             "Arn"
           ]
         }
+      }
+    },
+    "CounterAPI": {
+      "Type": "AWS::ApiGateway::RestApi",
+      "Properties": {
+        "Name": "CounterAPI"
       }
     }
   }
