@@ -77,7 +77,7 @@
                     "dynamodb:Scan"
                   ],
                   "Resource": {
-                    "Fn:GetAtt": ["MyTable","ARN"]
+                    "Fn::GetAtt": ["MyTable","ARN"]
                   }
                 }
               ]
