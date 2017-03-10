@@ -77,7 +77,13 @@
                     "dynamodb:Scan"
                   ],
                   "Resource": {
-                    "Fn::GetAtt": ["MyTable","ARN"]
+                    
+                    "Fn::Join": ["arn:aws:dynamodb:",
+                                 {"Ref":"AWS::Region"},
+                                 ":",
+                                 {"Ref": "AWS::AccountId"},
+                                ":table/MyTable"
+                                ]
                   }
                 }
               ]
