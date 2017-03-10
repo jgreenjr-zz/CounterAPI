@@ -142,6 +142,29 @@
         },
         "PathPart": "Count"
       }
+    },
+    "Count-Get": {
+      "Type": "AWS::ApiGateway::Method",
+      "Properties": {
+        "HttpMethod": "GET",
+        "ResourceId": {
+          "Fn::GetAtt": [
+            "Count",
+            "ResourceId"
+          ]
+        },
+        "RestId": {
+          "Ref": "MyApi"
+        },
+        "AuthorizationType": "NONE",
+        "Integration": {
+          "Type": "AWS_PROXY",
+          "IntegrationHttpMethod": "GET",
+          "Uri": {
+            "Fn::Sub": "arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${AMIIDLookup.Arn}/invocations"
+          }
+        }
+      }
     }
   }
 }
