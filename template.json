@@ -48,21 +48,24 @@
         },
         "Policies": [
           {
-            "Version": "2012-10-17",
-            "Statement": [
-              {
-                "Sid": "DescribeQueryScanBooksTable",
-                "Effect": "Allow",
-                "Action": [
-                  "dynamodb:DescribeTable",
-                  "dynamodb:Query",
-                  "dynamodb:Scan"
-                ],
-                "Resource": {
-                  "Ref": "MyTable"
+            "PolicyName": "root",
+            "PolicyDocument": {
+              "Version": "2012-10-17",
+              "Statement": [
+                {
+                  "Sid": "DescribeQueryScanBooksTable",
+                  "Effect": "Allow",
+                  "Action": [
+                    "dynamodb:DescribeTable",
+                    "dynamodb:Query",
+                    "dynamodb:Scan"
+                  ],
+                  "Resource": {
+                    "Ref": "MyTable"
+                  }
                 }
-              }
-            ]
+              ]
+            }
           }
         ]
       }
