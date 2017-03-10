@@ -19,6 +19,12 @@
             "AttributeName": "UserName",
             "AttributeType": "S"
           }
+        ],
+        "KeySchema": [
+          {
+            "AttributeName": "UserName",
+            "KeyType": "HASH"
+          }
         ]
       }
     },
