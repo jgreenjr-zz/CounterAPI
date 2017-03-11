@@ -48,8 +48,7 @@
                 ]
               },
               "Action": [
-                "sts:AssumeRole",
-                "lambda:InvokeFunction"
+                "sts:AssumeRole"
               ]
             }
           ]
