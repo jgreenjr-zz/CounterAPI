@@ -148,10 +148,7 @@
       "Properties": {
         "HttpMethod": "GET",
         "ResourceId": {
-          "Fn::GetAtt": [
-            "Count",
-            "ResourceId"
-          ]
+          "Ref": "Count"
         },
         "RestId": {
           "Ref": "MyApi"
