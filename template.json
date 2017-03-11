@@ -143,7 +143,7 @@
         "PathPart": "Count"
       }
     },
-    "Count-Get": {
+    "CountGet": {
       "Type": "AWS::ApiGateway::Method",
       "Properties": {
         "HttpMethod": "GET",
