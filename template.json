@@ -174,7 +174,13 @@
         "AuthorizationType": "NONE",
         "Integration": {
           "Type": "AWS_PROXY",
-          "IntegrationHttpMethod": "GET",
+          "IntegrationHttpMethod": "POST",
+          "Credentials": {
+            "Fn::GetAtt": [
+              "ServiceRole",
+              "Arn"
+            ]
+          },
           "Uri": {
             "Fn::Sub": "arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${AMIIDLookup.Arn}/invocations"
           }
