@@ -1,4 +1,4 @@
-version: 0.1
+version: 0.2
 
 phases:
   post_build:
@@ -6,6 +6,6 @@ phases:
       - echo Build completed
 artifacts:
   files:
-    - src/*.py
-    - template.json
-    - configuration.json
+    - '**/*'
+   base-directory: 'src'
+   
