@@ -48,7 +48,8 @@
                 ]
               },
               "Action": [
-                "sts:AssumeRole"
+                "sts:AssumeRole",
+                "lambda:InvokeFunction"
               ]
             }
           ]
@@ -109,7 +110,8 @@
                     "*"
                   ],
                   "Action": [
-                    "sns:ListTopics"
+                    "sns:ListTopics",
+                    "lambda:InvokeFunction"
                   ]
                 }
               ]
