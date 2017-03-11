@@ -151,7 +151,7 @@
           "Ref": "Count"
         },
         "RestId": {
-          "Ref": "MyApi"
+          "Ref": "CounterAPI"
         },
         "AuthorizationType": "NONE",
         "Integration": {
