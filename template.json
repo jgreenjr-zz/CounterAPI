@@ -103,7 +103,7 @@
     "AMIIDLookup": {
       "Type": "AWS::Lambda::Function",
       "Properties": {
-        "Handler": "CounterGet.handler",
+        "Handler": "counter_get.handler",
         "Code": {
           "S3Bucket": {
             "Ref": "myBucket"
