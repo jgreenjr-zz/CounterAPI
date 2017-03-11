@@ -150,7 +150,7 @@
         "ResourceId": {
           "Ref": "Count"
         },
-        "RestId": {
+        "RestApiId": {
           "Ref": "CounterAPI"
         },
         "AuthorizationType": "NONE",
