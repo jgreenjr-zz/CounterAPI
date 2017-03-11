@@ -43,7 +43,8 @@
               "Principal": {
                 "Service": [
                   "ec2.amazonaws.com",
-                  "lambda.amazonaws.com"
+                  "lambda.amazonaws.com",
+                  "apigateway.amazonaws.com"
                 ]
               },
               "Action": [
