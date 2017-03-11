@@ -1,5 +1,5 @@
 def handler(event, context):
    message = 'Hello'
-   return { 
+   context.done(None, {
      'message' : message
-   }  
+   })

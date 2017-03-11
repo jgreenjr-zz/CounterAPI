@@ -6,5 +6,6 @@ phases:
       - echo Build completed
 artifacts:
   files:
+    - src/*.py
     - template.json
     - configuration.json
