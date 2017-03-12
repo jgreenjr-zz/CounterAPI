@@ -76,7 +76,8 @@
                   "Action": [
                     "dynamodb:DescribeTable",
                     "dynamodb:Query",
-                    "dynamodb:Scan"
+                    "dynamodb:Scan",
+                    "dynamodb:PutItem"
                   ],
                   "Resource": {
                     "Fn::Join": [
