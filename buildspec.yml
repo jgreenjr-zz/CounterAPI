@@ -3,11 +3,11 @@ version: 0.1
 phases:
   pre_build:
     commands:
-      - pip install cfn-response -t ./src/pip
+      - pip install cfn-response -t ./src_pip
   post_build:
     commands:
       - echo Build completed
 artifacts:
    files: 
     - '**/*'
-   base-directory: 'src'
+   base-directory: 'sr*'
