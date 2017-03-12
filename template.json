@@ -147,6 +147,31 @@
         "ServiceRole"
       ]
     },
+    "fn_counter_post": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "Handler": "counter_post.handler",
+        "Code": {
+          "S3Bucket": {
+            "Ref": "myBucket"
+          },
+          "S3Key": {
+            "Ref": "MyS3Key"
+          }
+        },
+        "Runtime": "python2.7",
+        "Timeout": "25",
+        "Role": {
+          "Fn::GetAtt": [
+            "ServiceRole",
+            "Arn"
+          ]
+        }
+      },
+      "DependsOn": [
+        "ServiceRole"
+      ]
+    },
     "CounterAPI": {
       "Type": "AWS::ApiGateway::RestApi",
       "Properties": {
@@ -203,6 +228,38 @@
         "AMIIDLookup"
       ]
     },
+    "CountPost": {
+      "Type": "AWS::ApiGateway::Method",
+      "Properties": {
+        "HttpMethod": "Post",
+        "ResourceId": {
+          "Ref": "Count"
+        },
+        "RestApiId": {
+          "Ref": "CounterAPI"
+        },
+        "AuthorizationType": "NONE",
+        "Integration": {
+          "Type": "AWS_PROXY",
+          "IntegrationHttpMethod": "POST",
+          "Credentials": {
+            "Fn::GetAtt": [
+              "ServiceRole",
+              "Arn"
+            ]
+          },
+          "Uri": {
+            "Fn::Sub": "arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${fn_counter_post.Arn}/invocations"
+          }
+        }
+      },
+      "DependsOn": [
+        "Count",
+        "CounterAPI",
+        "ServiceRole",
+        "fn_counter_post"
+      ]
+    },
     "CounterAPIDeployment": {
       "Type": "AWS::ApiGateway::Deployment",
       "Properties": {
@@ -217,6 +274,7 @@
       },
       "DependsOn": [
         "CountGet",
+        "CountPost",
         "Count",
         "CounterAPI"
       ]
