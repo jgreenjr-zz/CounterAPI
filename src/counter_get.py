@@ -10,7 +10,7 @@ def handler(event, context):
                                               
   results = table.scan()
   
-  responseBody = result["Items"]
+  responseBody = results["Items"]
 
   return  {
     'statusCode':200,
