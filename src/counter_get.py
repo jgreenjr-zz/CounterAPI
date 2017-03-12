@@ -1,5 +1,8 @@
+from cfnresponse import send, SUCCESS
+
 def handler(event, context):
    message = 'Hello'
-   context.done(None, {
+   send(event, context, SUCCESS,  {
      'message' : message
-   })
+   }) 
+   

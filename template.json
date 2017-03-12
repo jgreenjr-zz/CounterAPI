@@ -187,6 +187,27 @@
           }
         }
       }
+    },
+    "CounterAPIDeployment": {
+      "Type": "AWS::ApiGateway::Deployment",
+      "Properties": {
+        "RestApiId": {
+          "Ref": "CounterAPI"
+        },
+        "Description": "My deployment"
+      }
+    },
+    "DevStage": {
+      "Type": "AWS::ApiGateway::Stage",
+      "Properties": {
+        "DeploymentId": {
+          "Ref": "CounterAPIDeployment"
+        },
+        "RestApiId": {
+          "Ref": "CounterAPI"
+        },
+        "StageName": "Dev"
+      }
     }
   }
 }
