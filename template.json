@@ -194,19 +194,12 @@
         "RestApiId": {
           "Ref": "CounterAPI"
         },
+        "StageName": "Dev",
+        "StageDescription": {
+          "StageName": "Dev",
+          "Description": "Dev Stage"
+        },
         "Description": "My deployment"
-      }
-    },
-    "DevStage": {
-      "Type": "AWS::ApiGateway::Stage",
-      "Properties": {
-        "DeploymentId": {
-          "Ref": "CounterAPIDeployment"
-        },
-        "RestApiId": {
-          "Ref": "CounterAPI"
-        },
-        "StageName": "Dev"
       }
     }
   }
