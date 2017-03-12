@@ -168,7 +168,7 @@
         "PathPart": "Count"
       },
       "DependsOn": [
-        "CountAPI"
+        "CounterAPI"
       ]
     },
     "CountGet": {
@@ -198,7 +198,7 @@
       },
       "DependsOn": [
         "Count",
-        "CountAPI",
+        "CounterAPI",
         "ServiceRole",
         "AMIIDLookup"
       ]
@@ -218,7 +218,7 @@
       "DependsOn": [
         "CountGet",
         "Count",
-        "CountAPI"
+        "CounterAPI"
       ]
     }
   }
