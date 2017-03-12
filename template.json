@@ -117,7 +117,10 @@
             }
           }
         ]
-      }
+      },
+      "DependsOn": [
+        "MyTable"
+      ]
     },
     "AMIIDLookup": {
       "Type": "AWS::Lambda::Function",
@@ -139,7 +142,10 @@
             "Arn"
           ]
         }
-      }
+      },
+      "DependsOn": [
+        "SeviceRole"
+      ]
     },
     "CounterAPI": {
       "Type": "AWS::ApiGateway::RestApi",
@@ -160,7 +166,10 @@
           ]
         },
         "PathPart": "Count"
-      }
+      },
+      "DependsOn": [
+        "CountAPI"
+      ]
     },
     "CountGet": {
       "Type": "AWS::ApiGateway::Method",
@@ -186,7 +195,13 @@
             "Fn::Sub": "arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${AMIIDLookup.Arn}/invocations"
           }
         }
-      }
+      },
+      "DependsOn": [
+        "Count",
+        "CountAPI",
+        "ServiceRole",
+        "AMIIDLookup"
+      ]
     },
     "CounterAPIDeployment": {
       "Type": "AWS::ApiGateway::Deployment",
@@ -196,11 +211,15 @@
         },
         "StageName": "Dev",
         "StageDescription": {
-          "StageName": "Dev",
-          "Description": "Dev Stage"
+          "StageName": "Dev"
         },
         "Description": "My deployment"
-      }
+      },
+      "DependsOn": [
+        "CountGet",
+        "Count",
+        "CountAPI"
+      ]
     }
   }
 }
