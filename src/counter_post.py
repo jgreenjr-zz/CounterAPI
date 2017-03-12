@@ -9,7 +9,7 @@ def handler(event, context):
   
   table = dynamodb.Table('MyTable')
                                               
-  table.put_item({
+  table.put_item(Item={
     'UserName': body['UserName']
   })
   
