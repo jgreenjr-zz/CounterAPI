@@ -207,6 +207,7 @@
         "RestApiId": {
           "Ref": "CounterAPI"
         },
+        "ApiKeyRequired": true,
         "AuthorizationType": "NONE",
         "Integration": {
           "Type": "AWS_PROXY",
@@ -239,6 +240,7 @@
         "RestApiId": {
           "Ref": "CounterAPI"
         },
+        "ApiKeyRequired": true,
         "AuthorizationType": "NONE",
         "Integration": {
           "Type": "AWS_PROXY",
@@ -279,6 +281,32 @@
         "Count",
         "CounterAPI"
       ]
+    },
+    "ApiKey": {
+      "Type": "AWS::ApiGateway::ApiKey",
+      "DependsOn": [
+        "CounterAPIDeployment"
+      ],
+      "Properties": {
+        "Name": "TestApiKey",
+        "Description": "CloudFormation API Key V1",
+        "Enabled": "true",
+        "StageKeys": [
+          {
+            "RestApiId": {
+              "Ref": "CounterAPI"
+            },
+            "StageName": "Dev"
+          }
+        ]
+      }
+    }
+  },
+  "Outputs": {
+    "APIKey": {
+      "Value": {
+        "Ref": "ApiKey"
+      }
     }
   }
 }
